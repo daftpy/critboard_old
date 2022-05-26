@@ -1,0 +1,33 @@
+#StatusBar {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#StatusBar > * {
+    margin: 1rem 1rem;
+}
+#StatusBar > .inputField {
+    width: 100%;
+}
+#StatusBar > .inputField > input[type="text"] {
+    width: 100%;
+}
+#Wrapper {
+    justify-content: space-around;
+}
+@media (min-width: 992px) {
+    #Wrapper {
+        justify-content: space-between;
+        flex-grow: 0;
+    }
+    #Wrapper > *:first-child {
+        margin: 0 6rem;
+    }
+    #StatusBar {
+        justify-content: end;
+    }
+    #StatusBar > .inputField {
+        flex-grow: 1;
+        width: auto;
+        max-width: 800px;
+    }
+  }

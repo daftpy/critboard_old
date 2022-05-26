@@ -1,0 +1,90 @@
+#Navbar {
+  display: flex;
+  flex-direction: column;
+}
+.navigation {
+  margin: 2rem 0 0 0;
+  width: 100%;
+  max-height: min-content;
+  transition: max-height 500ms;
+}
+.navHidden {
+  margin: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+}
+.navigation > ul {
+  display: flex;
+  justify-content: space-around;
+}
+.navigation > ul > li {
+  padding: 0 1rem;
+  text-align: center;
+}
+.navigation > ul li div:hover {
+  color: #4F46E5;
+  transition: color 0.5s ease-in-out;
+  cursor: pointer;
+}
+.animateSlideOut {
+  animation: slideOut 500ms ease-out;
+}
+.animateSlideIn {
+  animation: slideIn 500ms ease-out;
+}
+@keyframes slideOut {
+  from {
+    margin: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+  to {
+    margin: 2rem 0 0 0;
+    width: 100%;
+    max-height: 200px;
+  }
+}
+@keyframes slideIn {
+  from {
+    margin: 2rem 0 0 0;
+    width: 100%;
+    max-height: 200px;
+  }
+  to {
+    margin: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+}
+@media (min-width: 768px) {
+  #Brand {
+    display: block;
+  }
+  .menuIcon {
+    display: none;
+  }
+  #Navbar {
+    display: block;
+    padding: 1rem 1rem 0 1rem;
+  }
+  .navHidden {
+    margin: 2rem 0 0 0;
+    width: 100%;
+    max-height: min-content;
+    overflow: auto;
+  }
+  .navigation {
+    margin: 7rem 0;
+    padding: 0 1rem;
+  }
+  .navigation > ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .navigation > ul li {
+    margin: 4rem 0;
+  }
+}
