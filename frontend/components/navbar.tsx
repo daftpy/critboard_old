@@ -71,11 +71,11 @@ const Navbar: NextPage = () => {
             </a>
           </Link>
         </div>
-        <span id="NavButton" onClick={toggleMenu} className={`absolute right-9 top-7 text-slate-400 ${styles.menuIcon}`}>
-          {visibility === false && 
+        <span id="NavButton" onClick={toggleMenu} className={`absolute right-9 top-7 text-slate-400 hover:text-slate-500 ${styles.menuIcon}`}>
+          { visibility === false && 
             <a href="#">{ menuIcon }</a>
           }
-          {visibility === true &&
+          { visibility === true &&
             <a href="#">{ closeIcon }</a>
           }
         </span>

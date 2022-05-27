@@ -1,0 +1,15 @@
+.wrapper > * {
+    margin: 2rem 0;
+}
+
+@media (min-width: 1200px) {
+    .wrapper {
+        flex-direction: row;
+    }
+    .welcomeBox {
+        margin-right: 3rem;
+    }
+    .hottestBox {
+        margin-left: 3rem;
+    }
+}

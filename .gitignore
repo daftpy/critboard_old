@@ -4,6 +4,7 @@
 frontend/node_modules
 frontend/.pnp
 .pnp.js
+app/env
 
 # testing
 frontend/coverage
@@ -18,6 +19,7 @@ frontend/build
 # misc
 .DS_Store
 *.pem
+db.sqlite3
 
 # debug
 npm-debug.log*
@@ -27,9 +29,14 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env.dev
 
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
+
+# python misc
+__pycache__
+*.pyc
