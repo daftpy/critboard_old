@@ -31,12 +31,14 @@ const Home: NextPage = () => {
           <div className='text-stone-700'>
             <p className='my-3'>Welcome to Critboardv2</p>
             <p className='my-3'>Critboard makes it easy for content creators to interact with their audience and give them critical feedback on their music, videos, and art.</p>
-            <div className="flex justify-between items-center font-medium mt-8">
-              <div>Submissions are currently <span className='text-green-400 font-bold'>open</span></div>
-              <div className="flex items-center bg-green-400 px-6 py-1 text-white rounded-[24px] font-bold text-center">
-                <div>Request Feedback</div>
-                <div className='ml-2'>{ requestIcon }</div>
-              </div>
+            <div className="flex justify-between text-sm items-center font-medium mt-8">
+              <div className='mr-4'>Submissions are currently <span className='text-green-400 font-bold'>open</span></div>
+              <a href="#">
+                <div className="flex items-center text-xs bg-green-400 px-6 py-2 text-white rounded-[24px] font-bold text-center hover:text-emerald-50 hover:shadow">
+                  <div>Request Feedback</div>
+                  <div className='ml-2'>{ requestIcon }</div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
