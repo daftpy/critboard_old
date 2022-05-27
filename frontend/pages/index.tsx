@@ -40,7 +40,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-          <div className={`bg-rose-500 rounded-[24px] px-16 py-6 text-center text-stone-50 ${styles.hottestBox}`}>
+          <div className={`bg-rose-500 grow rounded-[24px] px-16 py-6 text-center text-stone-50 ${styles.hottestBox}`}>
           <div className='flex items-center justify-center whitespace-nowrap'>
             <h2 className='text-3xl font-bold mb-2 mr-1'>Hottest Submissions</h2>
             <span className='ml-1'>{fireIcon}</span>
