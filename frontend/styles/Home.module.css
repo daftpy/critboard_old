@@ -2,6 +2,13 @@
   margin: 2rem 0;
 }
 
+.twitchIcon {
+  fill: #9146FF;
+}
+.youtubeIcon {
+  fill: #FF0000;
+}
+
 @media (min-width: 576px) {
   .wrapper {
     margin: 2rem 7.5%;

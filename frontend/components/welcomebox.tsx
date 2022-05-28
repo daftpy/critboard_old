@@ -14,12 +14,12 @@ const WelcomeBox: NextPage = () => {
     </svg>
   );
   return (
-    <div className={`bg-slate-100 px-12 py-9 text-stone-800 ${styles.welcomeBox}`}>
+    <div className={`bg-slate-100 px-12 py-8 text-stone-800 ${styles.welcomeBox}`}>
       <div className='flex whitespace-nowrap'>
-        <h2 className='text-3xl font-bold mb-2 mr-1'>Creative Feedback</h2>
-        <span className='ml-1 mt-0.5'>{heartIcon}</span>
+        <h2 className='text-2xl font-bold mb-2 mr-1'>Creative Feedback</h2>
+        <span className='ml-1'>{ heartIcon }</span>
       </div>
-      <div className='text-stone-700'>
+      <div className='text-stone-700 text-sm'>
         <p className='my-3'>Welcome to Critboardv2</p>
         <p className='my-3'>Critboard makes it easy for content creators to interact with their audience and give them critical feedback on their music, videos, and art.</p>
         <div className="flex justify-between text-sm items-center font-medium mt-8">
