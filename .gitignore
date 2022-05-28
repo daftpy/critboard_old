@@ -20,6 +20,7 @@ frontend/build
 .DS_Store
 *.pem
 db.sqlite3
+todo.txt
 
 # debug
 npm-debug.log*

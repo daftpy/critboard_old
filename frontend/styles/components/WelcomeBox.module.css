@@ -1,0 +1,11 @@
+@media (min-width: 576px) {
+  .welcomeBox {
+    border-radius: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .welcomeBox {
+    margin-right: 3rem;
+  }
+}

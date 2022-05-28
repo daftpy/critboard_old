@@ -1,0 +1,11 @@
+@media (min-width: 576px) {
+  .hottestBox {
+    border-radius: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hottestBox {
+    margin-left: 3rem;
+  }
+}

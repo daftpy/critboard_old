@@ -34,7 +34,7 @@ const BaseLayout: NextPage<Props> = ({children, home}) => {
               { children }
             </main>
 
-            <footer className={styles.footer}>
+            <footer className={`bg-slate-50 ${styles.footer}`}>
               <a
                 href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
                 target="_blank"
