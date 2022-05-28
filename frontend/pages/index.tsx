@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import { ReactElement } from 'react';
 import styles from '../styles/Home.module.css';
 import BaseLayout from '../components/baselayout';
 
@@ -11,7 +10,7 @@ const Home: NextPage = () => {
     <BaseLayout>
       <div className={`flex flex-col ${styles.wrapper}`}>
         <div><WelcomeBox /></div>
-        <div><HottestSubmissions /></div>
+        <div className='grow'><HottestSubmissions /></div>
       </div>
     </BaseLayout>
   )
