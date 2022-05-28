@@ -12,10 +12,16 @@ const Home: NextPage = () => {
     <BaseLayout>
       <div className={`flex flex-col ${styles.wrapper}`}>
         <div>
-          <WelcomeBox />
-          <SocialLinks />
+          <div className="mb-20">
+            <WelcomeBox />
+          </div>
+          <div className={`${styles.socialLinksWrapper} mb-4`}>
+            <SocialLinks />
+          </div>
         </div>
-        <div className='grow'><HottestSubmissions /></div>
+        <div className='grow'>
+          <HottestSubmissions />
+        </div>
       </div>
       <div className={`${styles.wrapper}`}>
         <h2 className='border-l-8 border-[#AFD2E9] text-2xl font-bold pl-3'>Newest Submissions</h2>

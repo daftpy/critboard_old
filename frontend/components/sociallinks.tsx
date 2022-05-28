@@ -17,7 +17,7 @@ const SocialLinks: NextPage = () => {
     </svg>
   )
     return (
-      <div className={`${styles.socialLinks} mt-12 text-center`}>
+      <div className={`${styles.socialLinks} text-center`}>
         <h3 className='font-bold mb-6'>Feedback Streamed Live</h3>
         <div className='flex hover:drop-shadow-sm flex-wrap justify-around text-xs font-medium'>
           <Link href="#">

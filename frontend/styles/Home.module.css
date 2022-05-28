@@ -12,4 +12,7 @@
   .wrapper {
     flex-direction: row;
   }
+  .socialLinksWrapper {
+    margin-bottom: 0;
+  }
 }
