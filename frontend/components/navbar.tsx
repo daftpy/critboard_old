@@ -49,13 +49,13 @@ const Navbar: NextPage = () => {
       menu.classList.add(styles.animateSlideOut);
       setTimeout(function() {
         menu.classList.remove(styles.navHidden, styles.animateSlideOut);
-      }, 500);      
+      }, 450);      
     } else if (!visibility && count != 0) {
       menu.classList.add(styles.animateSlideIn);
       setTimeout(function() {
         menu.classList.add(styles.navHidden);
         menu.classList.remove(styles.animateSlideIn);
-      }, 500);    
+      }, 450);    
     }
     let newCount: number = count + 1;
     setCount(newCount);

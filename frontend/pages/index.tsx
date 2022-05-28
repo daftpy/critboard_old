@@ -23,18 +23,18 @@ const Home: NextPage = () => {
   return (
     <BaseLayout>
       <div className={`flex flex-col ${styles.wrapper}`}>
-        <div className={`bg-slate-100 rounded-[24px] px-12 py-6 text-stone-800 ${styles.welcomeBox}`}>
+        <div className={`bg-slate-100 px-12 py-9 text-stone-800 ${styles.welcomeBox}`}>
         <div className='flex whitespace-nowrap'>
             <h2 className='text-3xl font-bold mb-2 mr-1'>Creative Feedback</h2>
-            {/* <span className='ml-1 mt-0.5'>{heartIcon}</span> */}
+            <span className='ml-1 mt-0.5'>{heartIcon}</span>
           </div>
           <div className='text-stone-700'>
             <p className='my-3'>Welcome to Critboardv2</p>
             <p className='my-3'>Critboard makes it easy for content creators to interact with their audience and give them critical feedback on their music, videos, and art.</p>
             <div className="flex justify-between text-sm items-center font-medium mt-8">
-              <div className='mr-4'>Submissions are currently <span className='text-green-400 font-bold'>open</span></div>
+              <div className='mr-4'>Submissions are <span className='text-green-400 font-bold'>open</span></div>
               <a href="#">
-                <div className="flex items-center text-xs bg-green-400 px-6 py-2 text-white rounded-[24px] font-bold text-center hover:text-emerald-50 hover:shadow">
+                <div className="flex items-center text-xs bg-green-400 px-6 py-3 text-white rounded-[24px] font-bold text-center hover:text-emerald-50 hover:shadow">
                   <div>Request Feedback</div>
                   <div className='ml-2'>{ requestIcon }</div>
                 </div>
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-          <div className={`bg-rose-500 grow rounded-[24px] px-16 py-6 text-center text-stone-50 ${styles.hottestBox}`}>
+          <div className={`bg-rose-500 grow px-16 py-9 text-center text-stone-50 ${styles.hottestBox}`}>
           <div className='flex items-center justify-center whitespace-nowrap'>
             <h2 className='text-3xl font-bold mb-2 mr-1'>Hottest Submissions</h2>
             <span className='ml-1'>{fireIcon}</span>

@@ -2,6 +2,15 @@
     margin: 2rem 0;
 }
 
+@media (min-width: 576px) {
+    .wrapper {
+        margin: 2rem 7.5%;
+    }
+    .welcomeBox, .hottestBox {
+        border-radius: 24px;
+    }
+}
+
 @media (min-width: 1200px) {
     .wrapper {
         flex-direction: row;
