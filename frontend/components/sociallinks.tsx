@@ -19,10 +19,10 @@ const SocialLinks: NextPage = () => {
     return (
       <div className={`${styles.socialLinks} mt-12 text-center`}>
         <h3 className='font-bold mb-6'>Feedback Streamed Live</h3>
-        <div className='flex hover:drop-shadow-sm flex-wrap justify-around text-sm font-medium'>
+        <div className='flex hover:drop-shadow-sm flex-wrap justify-around text-xs font-medium'>
           <Link href="#">
             <a>
-              <div className='flex bg-purple-100 rounded-[12px] px-4 py-2 mb-4 items-center'>
+              <div className='flex bg-purple-100 rounded-[12px] px-4 py-1.5 mb-4 items-center'>
                 <div className='mr-2'>{ twitchIcon }</div>
                 <div className='w-fit text-[#9146FF] '>Twitch.tv/UserChannel</div>
               </div>
@@ -30,7 +30,7 @@ const SocialLinks: NextPage = () => {
           </Link>
           <Link href="#">
             <a>
-              <div className='flex bg-red-100 rounded-[12px] px-4 py-2 items-center mb-4'>
+              <div className='flex bg-red-100 rounded-[12px] px-4 py-1.5 items-center mb-4'>
                 <div className="mr-2">{ youtubeIcon }</div>
                 <div className='w-fit text-[#FF0000]'>Youtube.com/c/UserChannel</div>
               </div>
