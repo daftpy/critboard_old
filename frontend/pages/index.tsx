@@ -10,8 +10,8 @@ const Home: NextPage = () => {
   return (
     <BaseLayout>
       <div className={`flex flex-col ${styles.wrapper}`}>
-        <WelcomeBox />
-        <HottestSubmissions />
+        <div><WelcomeBox /></div>
+        <div><HottestSubmissions /></div>
       </div>
     </BaseLayout>
   )
