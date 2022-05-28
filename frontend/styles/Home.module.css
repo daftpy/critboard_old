@@ -2,27 +2,14 @@
   margin: 2rem 0;
 }
 
-.twitchIcon {
-  fill: #9146FF;
-}
-.youtubeIcon {
-  fill: #FF0000;
-}
-
 @media (min-width: 576px) {
   .wrapper {
-    margin: 2rem 7.5%;
-  }
-  .welcomeBox, .hottestBox {
-    border-radius: 24px;
+    margin: 1rem 7.5%;
   }
 }
 
 @media (min-width: 1200px) {
   .wrapper {
     flex-direction: row;
-  }
-  .socialLinks {
-    margin-right: 3rem;
   }
 }
