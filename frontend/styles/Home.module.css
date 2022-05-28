@@ -22,4 +22,7 @@
   .wrapper {
     flex-direction: row;
   }
+  .socialLinks {
+    margin-right: 3rem;
+  }
 }

@@ -26,7 +26,7 @@ const Home: NextPage = () => {
       <div className={`flex flex-col ${styles.wrapper}`}>
         <div>
           <WelcomeBox />
-          <div className='mt-12 text-center mr-12'>
+          <div className={`${styles.socialLinks} mt-12 text-center`}>
             <h3 className='font-bold mb-6'>Feedback Streamed Live</h3>
             <div className='flex hover:drop-shadow-sm flex-wrap justify-around text-sm font-medium'>
               <Link href="#">
