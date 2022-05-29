@@ -17,7 +17,7 @@ const WelcomeBox: NextPage = () => {
     <div className={`bg-slate-100 px-12 py-8 text-stone-800 ${styles.welcomeBox}`}>
       <div className='flex whitespace-nowrap'>
         <h2 className='text-2xl font-bold mb-2 mr-1'>Creative Feedback</h2>
-        <span className='ml-1'>{ heartIcon }</span>
+        <span className='ml-1 text-slate-300'>{ heartIcon }</span>
       </div>
       <div className='text-stone-700 text-sm'>
         <p className='my-3'>Welcome to Critboardv2</p>
