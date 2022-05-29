@@ -1,0 +1,24 @@
+.submissions >*:not(:first-child) {
+  margin: 3rem 0 0 0;
+}
+@media (min-width: 992px) {
+  .submissions >*, .submissions >*:not(:first-child) {
+    max-width: 48%;
+    margin: 0 0 2rem 0;
+  }
+  .submissions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1700px) {
+  .submissions {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .submissions >*, .submissions >*:not(:first-child), .submissions >*:not(:first-child), .submissions >*:nth-child(odd), .submissions >*:nth-child(even) {
+    max-width: 20%;
+    margin: 0;
+  }
+}

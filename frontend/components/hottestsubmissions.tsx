@@ -10,7 +10,7 @@ const HottestSubmissions: NextPage = () => {
     </svg>
   )
   return (
-    <div className={`bg-rose-500 grow px-12 py-8 text-center text-stone-50 ${styles.hottestBox}`}>
+    <div className={`bg-rose-500 grow px-12 py-8 text-center text-stone-50 h-full ${styles.hottestBox}`}>
       <div className='flex justify-center whitespace-nowrap'>
         <h2 className='text-2xl font-bold mb-2 mr-1'>Hottest Submissions</h2>
         <span className='ml-1'>{ fireIcon }</span>
