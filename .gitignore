@@ -8,6 +8,11 @@ app/env
 
 # testing
 frontend/coverage
+frontend/test-results/
+frontend/playwright-report/
+frontend/playwright/.cache/
+frontend/tests/example.spec.ts
+
 
 # next.js
 frontend/.next/

@@ -66,7 +66,7 @@ const Navbar: NextPage = () => {
       <div>
         <div id={styles.Brand} className="text-3xl font-bold text-indigo-500 mt-5 text-center">
           <Link href='/'>
-            <a>
+            <a id="BrandName">
               Critboard
             </a>
           </Link>

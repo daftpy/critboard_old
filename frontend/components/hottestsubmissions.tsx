@@ -12,7 +12,7 @@ const HottestSubmissions: NextPage = () => {
   return (
     <div className={`bg-rose-500 grow px-12 py-8 text-center text-stone-50 h-full ${styles.hottestBox}`}>
       <div className='flex justify-center items-center whitespace-nowrap'>
-        <h2 className='text-2xl font-bold mr-1'>Hottest Submissions</h2>
+        <h2 id="HottestSubmissionsHeader" className='text-2xl font-bold mr-1'>Hottest Submissions</h2>
         <span className='ml-1 text-[#F7A1A1]'>{ fireIcon }</span>
       </div>
       <div className='text-stone-100 text-sm'>

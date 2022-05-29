@@ -14,9 +14,9 @@ const WelcomeBox: NextPage = () => {
     </svg>
   );
   return (
-    <div className={`bg-slate-100 px-12 py-8 text-stone-800 ${styles.welcomeBox}`}>
+    <div id="WelcomeBox" className={`bg-slate-100 px-12 py-8 text-stone-800 ${styles.welcomeBox}`}>
       <div className='flex whitespace-nowrap'>
-        <h2 className='text-2xl font-bold mb-2 mr-1'>Creative Feedback</h2>
+        <h2 id="WelcomeBoxHeader" className='text-2xl font-bold mb-2 mr-1'>Creative Feedback</h2>
         <span className='ml-1 text-slate-300'>{ heartIcon }</span>
       </div>
       <div className='text-stone-700 text-sm'>
@@ -25,7 +25,7 @@ const WelcomeBox: NextPage = () => {
         <div className="flex justify-between text-sm items-center font-medium mt-8">
           <div className='mr-4'>Submissions are <span className='text-green-400 font-bold'>open</span></div>
           <a href="#">
-            <div className="flex items-center text-xs bg-green-400 hover:bg-green-500 px-6 py-1.5 text-white rounded-[12px] font-bold text-center hover:text-emerald-50 hover:drop-shadow">
+            <div id="RequestFeedbackButton" className="flex items-center text-xs bg-green-400 hover:bg-green-500 px-6 py-1.5 text-white rounded-[12px] font-bold text-center hover:text-emerald-50 hover:drop-shadow">
               <div className="w-min">Request Feedback</div>
               <div className='ml-2'>{ requestIcon }</div>
             </div>
