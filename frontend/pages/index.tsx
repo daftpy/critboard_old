@@ -12,11 +12,11 @@ const Home: NextPage = () => {
   return (
     <BaseLayout>
       <div className={`flex flex-col ${styles.wrapper}`}>
-        <div>
-          <div className="mb-20">
+        <div className='flex flex-col justify-between'>
+          <div className='mb-12'>
             <WelcomeBox />
           </div>
-          <div className={`${styles.socialLinksWrapper} mb-4`}>
+          <div className={`${styles.socialLinksWrapper}`}>
             <SocialLinks />
           </div>
         </div>

@@ -14,11 +14,16 @@ const NewestSubmissions: NextPage = () => {
       <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
     </svg>
   )
+  const userIcon: ReactElement = (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd" />
+    </svg>
+  )
   return (
     <div>
       <h2 className='border-l-8 border-[#701192] text-2xl font-bold mb-8 pl-3'>Newest Submissions</h2>
       <div className={`flex flex-col text-center text-sm h-full ${styles.submissions}`}>
-        <div className='flex flex-col justify-between grow hover:bg-[#F9EDFD] bg-[#FCF1FF] pb-12 px-6 rounded-lg'>
+        <div className='flex flex-col justify-between grow hover:bg-[#F9EDFD] bg-[#FCF1FF] pb-8 px-6 rounded-lg'>
           <div className="flex justify-between text-[#EF4444]">
             <div className="invisible">.</div>
             <div className="flex font-bold text-xs mt-3 px-3 py-1 rounded-full w-fit items-center bg-white">
@@ -33,8 +38,13 @@ const NewestSubmissions: NextPage = () => {
             </div>
           </div>
           <p className='text-xs px-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur justo arcu. Donec sit amet dictum lorem. Suspendisse potenti. Aenean. </p>
+          <div className="flex justify-center mt-4">
+            <div className="flex">
+              <span>{ userIcon }</span><span className="font-bold">User</span>
+            </div>
+          </div>
         </div>
-        <div className='flex flex-col justify-between grow hover:bg-[#F9EDFD] bg-[#FCF1FF] pb-12 px-6 rounded-lg'>
+        <div className='flex flex-col justify-between grow hover:bg-[#F9EDFD] bg-[#FCF1FF] pb-8 px-6 rounded-lg'>
           <div className="flex justify-between text-[#EF4444]">
             <div className="invisible">.</div>
             <div className="flex font-bold text-xs mt-3 px-3 py-1 rounded-full w-fit items-center bg-white">
@@ -49,8 +59,13 @@ const NewestSubmissions: NextPage = () => {
             </div>
           </div>
           <p className='text-xs px-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur justo arcu. Donec sit amet dictum lorem. Suspendisse potenti. Aenean. </p>
+          <div className="flex justify-center mt-4">
+            <div className="flex">
+              <span>{ userIcon }</span><span className="font-bold">User</span>
+            </div>
+          </div>
         </div>
-        <div className='flex flex-col justify-between grow hover:bg-[#F9EDFD] bg-[#FCF1FF] mb-6 pb-12 px-6 rounded-lg'>
+        <div className='flex flex-col justify-between grow hover:bg-[#F9EDFD] bg-[#FCF1FF] mb-6 pb-8 px-6 rounded-lg'>
           <div className="flex justify-between text-[#EF4444]">
             <div className="invisible">.</div>
             <div className="flex font-bold text-xs mt-3 px-3 py-1 rounded-full w-fit items-center bg-white">
@@ -65,8 +80,13 @@ const NewestSubmissions: NextPage = () => {
             </div>
           </div>
           <p className='text-xs'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur justo arcu. Donec sit amet dictum lorem. Suspendisse potenti. Aenean. </p>
+          <div className="flex justify-center mt-4">
+            <div className="flex">
+              <span>{ userIcon }</span><span className="font-bold">User</span>
+            </div>
+          </div>
         </div>
-        <div className='flex flex-col justify-between grow hover:bg-[#F9EDFD] bg-[#FCF1FF] mb-6 pb-12 px-6 rounded-lg'>
+        <div className='flex flex-col justify-between grow hover:bg-[#F9EDFD] bg-[#FCF1FF] mb-6 pb-8 px-6 rounded-lg'>
           <div className="flex justify-between text-[#EF4444]">
             <div className="invisible">.</div>
             <div className="flex font-bold text-xs mt-3 px-3 py-1 rounded-full w-fit items-center bg-white">
@@ -81,6 +101,11 @@ const NewestSubmissions: NextPage = () => {
             </div>
           </div>
           <p className='text-xs px-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In consectetur justo arcu. Donec sit amet dictum lorem. Suspendisse potenti. Aenean. </p>
+          <div className="flex justify-center mt-4">
+            <div className="flex">
+              <span>{ userIcon }</span><span className="font-bold">User</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

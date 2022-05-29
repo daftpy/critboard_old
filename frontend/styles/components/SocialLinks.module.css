@@ -4,8 +4,3 @@
 .youtubeIcon {
   fill: #FF0000;
 }
-@media (min-width: 1200px) {
-  .socialLinks {
-    margin-right: 3rem;
-  }
-}
