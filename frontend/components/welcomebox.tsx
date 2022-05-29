@@ -25,8 +25,8 @@ const WelcomeBox: NextPage = () => {
         <div className="flex justify-between text-sm items-center font-medium mt-8">
           <div className='mr-4'>Submissions are <span className='text-green-400 font-bold'>open</span></div>
           <a href="#">
-            <div className="flex items-center text-xs bg-green-400 px-6 py-1.5 text-white rounded-[12px] font-bold text-center hover:text-emerald-50 hover:shadow">
-              <div>Request Feedback</div>
+            <div className="flex items-center text-xs bg-green-400 hover:bg-green-500 px-6 py-1.5 text-white rounded-[12px] font-bold text-center hover:text-emerald-50 hover:drop-shadow">
+              <div className="w-min">Request Feedback</div>
               <div className='ml-2'>{ requestIcon }</div>
             </div>
           </a>
