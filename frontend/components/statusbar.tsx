@@ -20,7 +20,7 @@ const StatusBar: NextPage = () => {
       </div>
       <div id={styles.Wrapper} className="flex items-center grow justify-around">
         <div className="flex justify-around items-center">
-          <div className="flex items-center text-white text-xs font-bold px-4 py-2 rounded-lg bg-green-400">
+          <div className="flex items-center text-white text-xs font-bold px-4 py-2 rounded-lg bg-green-500">
             <span className="mr-2">{ activeIcon }</span><span>Submissions Open</span>
           </div>
         </div>
