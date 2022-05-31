@@ -13,6 +13,8 @@ frontend/playwright-report/
 frontend/playwright/.cache/
 frontend/tests/example.spec.ts
 
+# mediafiles
+app/mediafiles/*
 
 # next.js
 frontend/.next/
