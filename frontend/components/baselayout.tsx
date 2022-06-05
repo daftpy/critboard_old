@@ -27,9 +27,9 @@ const BaseLayout: NextPage<Props> = ({children, home}) => {
 
       <div id={styles.Wrapper} className="flex">
         <Navbar />
-        <div className="w-full">
+        <div className="w-full grow flex flex-col">
           <StatusBar />
-          <div className="bg-white shadow-lg rounded-tl-[36px] mt-4">
+          <div className="bg-white shadow-lg rounded-tl-[36px] mt-4 grow flex flex-col">
             <main className={styles.main}>
               { children }
             </main>
@@ -49,8 +49,6 @@ const BaseLayout: NextPage<Props> = ({children, home}) => {
           </div>
         </div>
       </div>
-
-
     </div>
   )
 }

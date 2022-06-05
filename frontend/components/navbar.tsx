@@ -83,12 +83,12 @@ const Navbar: NextPage = () => {
       <div id="Navigation" className={`${styles.navigation} ${styles.navHidden}`}>
         <ul>
           <li>
-            <Link href='#'>
+            <Link href='/request_feedback'>
               <div className="flex flex-col items-center text-xs"><span className="mb-1">{ requestIcon }</span><a>Request Feedback</a></div>
             </Link>
           </li>
           <li>
-            <Link href='#'>
+            <Link href='/my_submissions'>
               <div className="flex flex-col items-center text-xs"><span className="mb-1">{ submissionsIcon }</span><a>My Submissions</a></div>
             </Link>
           </li>

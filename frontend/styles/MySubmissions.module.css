@@ -1,0 +1,47 @@
+.mySubmissionsHeader {
+    padding: 3rem 4rem;
+    order: 2;
+}
+.submissionRequestsBox {
+    padding: 3rem 4rem;
+    order: 1;
+}
+
+.pageWrapper {
+    flex-direction: column;
+}
+
+.pageWrapper > * {
+    margin-top: 3rem;
+}
+
+@media (min-width: 576px) {
+    .pageWrapper {
+        padding: 0 3rem;
+    }
+    .mySubmissionsHeader {
+        border-radius: 24px;
+    }
+    .submissionRequestsBox {
+        border-radius: 24px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .pageWrapper {
+        flex-direction: row;
+    }
+    .pageWrapper > * {
+        margin: 3rem 0;
+    }
+    .pageWrapper > *:first-child {
+        margin: 3rem 3rem 0 10%;
+        min-width: 50%;
+    }
+    .mySubmissionsHeader {
+        order: 1;
+    }
+    .submissionRequestsBox {
+        order: 2;
+    }
+}
