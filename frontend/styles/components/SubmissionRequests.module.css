@@ -1,0 +1,10 @@
+.submissionRequestsBox {
+    padding: 3rem 4rem;
+    text-align: center;
+}
+
+@media (min-width: 576px) {
+    .submissionRequestsBox {
+        border-radius: 24px;
+    }
+}
