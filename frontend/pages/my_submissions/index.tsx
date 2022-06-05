@@ -30,7 +30,6 @@ interface linkSubmission {
 
 
 const MySubmissions: NextPage<{ requestData: requestData[] }> = ({ requestData }) => {
-  const currentTime = Date.now();
   const requestIcon: ReactElement = (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
@@ -60,7 +59,7 @@ const MySubmissions: NextPage<{ requestData: requestData[] }> = ({ requestData }
               let date = new Date(submissionRequest.created_at);
               let distance = formatDistanceToNow(date, {addSuffix: true});
               return (
-                <Link href="/" key={submissionRequest.id}>
+                <Link href={`/submissions/request?id=${submissionRequest.id}`} key={submissionRequest.id}>
                   <a>
                     <ul className="bg-rose-400 hover:bg-rose-800 pb-6 pt-1 px-4 text-sm rounded-[18px] mt-8">
                       <li className="my-4 flex items-center justify-center">Requested { distance } <span className="ml-2">{ timeIcon }</span></li>

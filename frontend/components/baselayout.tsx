@@ -16,7 +16,7 @@ interface Props {
   home?: boolean;
 }
 
-const BaseLayout: NextPage<Props> = ({children, home}) => {
+const BaseLayout: React.FC<Props> = ({children, home}) => {
   return (
     <div className={`${styles.container} bg-slate-100`}>
       <Head>
@@ -25,7 +25,7 @@ const BaseLayout: NextPage<Props> = ({children, home}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div id={styles.Wrapper} className="flex">
+      <div id={styles.Wrapper}>
         <Navbar />
         <div className="w-full grow flex flex-col">
           <StatusBar />
