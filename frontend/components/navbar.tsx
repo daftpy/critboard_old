@@ -59,7 +59,7 @@ const Navbar: NextPage = () => {
     }
     let newCount: number = count + 1;
     setCount(newCount);
-  }, [visibility, count]);
+  }, [visibility]);
 
   return (
     <div id={styles.Navbar}>
