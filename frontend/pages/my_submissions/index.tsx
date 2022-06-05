@@ -6,8 +6,30 @@ import styles from "../../styles/MySubmissions.module.css";
 import SocialLinks from "../../components/sociallinks";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
+interface requestData {
+  id: string;
+  submission_type?: string;
+  is_reviewed: boolean;
+  created_at: Date;
+  submission_content?: fileSubmission | linkSubmission;
+}
 
-const MySubmissions: NextPage = ({ data }) => {
+interface fileSubmission {
+  title: string;
+  description: string;
+  created_at: Date;
+  link: string;
+}
+
+interface linkSubmission {
+  title: string;
+  description: string;
+  created_at: Date;
+  file: string;
+}
+
+
+const MySubmissions: NextPage<{ requestData: requestData[] }> = ({ requestData }) => {
   const currentTime = Date.now();
   const requestIcon: ReactElement = (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -20,7 +42,7 @@ const MySubmissions: NextPage = ({ data }) => {
     </svg>
   )
   const timeIcon: ReactElement = (
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
       <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
   )
@@ -34,7 +56,7 @@ const MySubmissions: NextPage = ({ data }) => {
           <div className={`bg-rose-500 text-slate-50 ${styles.submissionRequestsBox}`}>
             <h2 className="flex font-bold text-2xl items-center justify-center whitespace-nowrap">Submission Requests <span className="ml-2">{ requestIcon }</span></h2>
             <p className="my-4">Click on any submission request to start the process to submit a file or link for feedback.</p>
-            {data.map((submissionRequest) => {
+            {requestData.map((submissionRequest) => {
               let date = new Date(submissionRequest.created_at);
               let distance = formatDistanceToNow(date, {addSuffix: true});
               return (
@@ -72,9 +94,9 @@ const MySubmissions: NextPage = ({ data }) => {
 export async function getServerSideProps() {
   // fetch existing submission requests
   const res = await fetch('http://localhost:8000/submissions/');
-  const data = await res.json()
+  const requestData = await res.json()
 
-  return { props: { data } }
+  return { props: { requestData } }
 }
 
 export default MySubmissions;
