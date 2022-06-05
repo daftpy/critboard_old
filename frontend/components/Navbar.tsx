@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link href='/my_submissions'>
+            <Link href='/submissions/my_submissions'>
               <div className="flex flex-col items-center text-xs"><span className="mb-1">{ submissionsIcon }</span><a>My Submissions</a></div>
             </Link>
           </li>

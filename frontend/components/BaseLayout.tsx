@@ -2,8 +2,8 @@ import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/components/BaseLayout.module.css";
-import Navbar from './navbar';
-import StatusBar from "./statusbar";
+import Navbar from './Navbar';
+import StatusBar from "./StatusBar";
 
 /*
   BaseLayout: used for all standard pages across the site.

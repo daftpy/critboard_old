@@ -1,12 +1,10 @@
 import type { NextPage } from 'next';
 import styles from '../styles/Home.module.css';
-import BaseLayout from '../components/baselayout';
-
-
-import WelcomeBox from '../components/welcomebox';
-import HottestSubmissions from '../components/hottestsubmissions';
-import SocialLinks from '../components/sociallinks';
-import NewestSubmissions from '../components/newestsubmissions';
+import BaseLayout from '../components/BaseLayout';
+import WelcomeBox from '../components/WelcomeBox';
+import HottestSubmissions from '../components/HottestSubmissions';
+import SocialLinks from '../components/SocialLinks';
+import NewestSubmissions from '../components/NewestSubmissions';
 
 const Home: NextPage = () => {
   return (

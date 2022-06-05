@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 import { ReactElement } from "react";
 import Link from "next/link";
-import BaseLayout from "../../components/baselayout";
+import BaseLayout from "../../components/BaseLayout";
 import styles from "../../styles/MySubmissions.module.css";
-import SocialLinks from "../../components/sociallinks";
+import SocialLinks from "../../components/SocialLinks";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 interface requestData {

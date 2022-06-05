@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { ReactElement } from "react";
-import BaseLayout from "../../components/baselayout";
+import BaseLayout from "../../components/BaseLayout";
 import axios from 'axios';
 import { useRouter } from "next/router";
 import styles from "../../styles/RequestFeedback.module.css";
@@ -19,7 +19,7 @@ const RequestFeedback: NextPage = () => {
       .then(res => {
         console.log(res);
         console.log(res.data);
-        router.push('/my_submissions');
+        router.push('/submissions/my_submissions');
       })
   }
   return (

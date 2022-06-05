@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { ParsedUrlQuery } from "querystring";
 import { ReactElement } from "react";
-import BaseLayout from "../../components/baselayout";
+import BaseLayout from "../../components/BaseLayout";
 import styles from "../../styles/RequestForm.module.css";
 
 const RequestForm: NextPage = () => {

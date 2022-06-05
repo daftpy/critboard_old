@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import Link from "next/link";
 import { ReactElement } from "react";
 import styles from "../styles/components/NewestSubmissions.module.css";
-import SubmissionPreview from "./submissionpreview";
+import SubmissionPreview from "./SubmissionPreview";
 
 const NewestSubmissions: NextPage = () => {
   const fileIcon: ReactElement = (
