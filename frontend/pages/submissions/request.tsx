@@ -124,7 +124,7 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
                 <label className="ml-4 mb-2">Title</label>
                 <input className="rounded-full px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" type="text" placeholder="Submission Title" />
                 <label className="ml-4 mb-2 mt-8">Description</label>
-                <textarea className="rounded-[10px] px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" rows={10} placeholder="Submission Description" />
+                <textarea className="rounded-[10px] px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" rows={6} placeholder="Submission Description" />
               </div>
             </div>
           </div>
