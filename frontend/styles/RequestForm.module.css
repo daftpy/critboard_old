@@ -1,0 +1,46 @@
+.submissionTypeSelection {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity 600ms, visibility 600ms;
+            transition: opacity 600ms, visibility 600ms;
+}
+
+.submissionForm {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 600ms, visibility 600ms;
+            transition: opacity 600ms, visibility 600ms;
+}
+
+.formOpen {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    animation: fadeIn 1s;
+}
+
+.formClose {
+    visibility: hidden;
+    opacity: 1;
+    animation: fadeOut 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
