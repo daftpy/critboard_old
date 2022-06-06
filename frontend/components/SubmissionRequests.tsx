@@ -26,7 +26,7 @@ const SubmissionRequests: React.FC<{requestData: RequestData[]}> = ({requestData
           <Link href={`/submissions/request?id=${submissionRequest.id}`} key={submissionRequest.id}>
             <a>
               <ul className="bg-rose-400 hover:bg-rose-800 pb-6 pt-1 px-4 text-sm rounded-[18px] mt-8">
-                <li className="my-4 flex items-center justify-center">Requested { distance } <span className="ml-2">{ timeIcon }</span></li>
+                <li className="my-4 flex items-center justify-center font-bold">Requested { distance } <span className="ml-2">{ timeIcon }</span></li>
                 <li>id: { submissionRequest.id }</li>
               </ul>
             </a>

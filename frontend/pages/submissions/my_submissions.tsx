@@ -34,7 +34,7 @@ const MySubmissions: NextPage<{ requestData: RequestData[] }> = ({ requestData }
         </div>
         <div className="justify-around">
           <SubmissionRequests requestData={requestData} />
-          <div className={`${styles.mySubmissionsHeader}`}>
+          <div className={`text-center ${styles.mySubmissionsHeader}`}>
             <h2 className="flex font-bold text-2xl items-center justify-center">My Submissions <span className="ml-2 text-stone-800">{ submissionsIcon }</span></h2>
             <p className="my-4">
               On this page you will find your submission requests and previous submissions.

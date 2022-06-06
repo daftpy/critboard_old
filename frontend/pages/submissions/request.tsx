@@ -39,29 +39,45 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
 
   // state for submission_type selection to control div visibility
   const [submissionType, setType] = useState<React.SetStateAction<string | null>>(null);
+  const [count, setCount] = useState<number>(0); // Used to avoid animating on component mount
 
   useEffect(() => {
     const FileForm: HTMLElement = document.getElementById("FileForm")!;
     const LinkForm: HTMLElement = document.getElementById("LinkForm")!;
     const TypeSelection: HTMLElement = document.getElementById("TypeSelection")!;
 
-    if (submissionType == null) {
-      TypeSelection.classList.remove("hidden", styles.formClose);
-      FileForm.classList.remove(styles.formOpen);
-      LinkForm.classList.remove(styles.formOpen);
+    if (submissionType == null && count != 0) {
+      setTimeout(function() {
+        TypeSelection.classList.add(styles.formOpen);
+        TypeSelection.classList.remove("hidden", styles.formClose);
+        FileForm.classList.remove(styles.formOpen);
+        LinkForm.classList.remove(styles.formOpen);
+      }, 800);
+      FileForm.classList.add(styles.formClose);
+      LinkForm.classList.add(styles.formClose);
     } else if (submissionType == "FileForm") {
       setTimeout(function() {
         TypeSelection.classList.add("hidden");
+        FileForm.classList.remove(styles.formClose);
         FileForm.classList.add(styles.formOpen);
       }, 800);
+      TypeSelection.classList.remove(styles.formOpen);
       TypeSelection.classList.add(styles.formClose);
     } else if (submissionType == "LinkForm") {
       setTimeout(function() {
         TypeSelection.classList.add("hidden");
+        LinkForm.classList.remove(styles.formClose);
         LinkForm.classList.add(styles.formOpen);
       }, 800);
+      TypeSelection.classList.remove(styles.formOpen);
       TypeSelection.classList.add(styles.formClose);
     }
+    /*
+      Increment count and update state so the next time the state of
+      visibility is changed we animate the navbar.
+    */
+      let newCount: number = count + 1;
+      setCount(newCount);
   }, [submissionType])
 
 
@@ -125,6 +141,14 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
                 <input className="rounded-full px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" type="text" placeholder="Submission Title" />
                 <label className="ml-4 mb-2 mt-8">Description</label>
                 <textarea className="rounded-[10px] px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" rows={6} placeholder="Submission Description" />
+                <label className="ml-4 mb-2 mt-8">Link</label>
+                <input className="rounded-full px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" type="text" placeholder="Submission Link" />
+                <label className="ml-4 mb-2 mt-8">
+                  I have permission to submit this content. <br/>
+                  <input className="bg-red-100" type="checkbox" id="permission" name="permission" value="permission" />
+                </label>
+                
+                
               </div>
             </div>
           </div>
