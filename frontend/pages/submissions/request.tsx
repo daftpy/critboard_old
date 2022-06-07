@@ -32,6 +32,11 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
       <path strokeLinecap="round" strokeLinejoin="round" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
     </svg>
   )
+  const privateIcon: ReactElement = (
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+    </svg>
+  )
   // tailwind styles
   const containerStyle = "flex items-center flex-col min-h-full grow justify-center px-[10%] py-12";
   const headingStyle = "font-bold text-3xl text-center";
@@ -121,13 +126,20 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
               </div>
               <div className="flex flex-col">
                 <h2 className="text-center font-bold text-2xl">File Submission</h2>
-                <span className="underline text-center my-2 text-red-600">
-                  Supported files are .mp3, .mp4, .jpeg, and .png
-                </span>
                 <label className="ml-4 mb-2">Title</label>
                 <input className="rounded-full px-4 py-2 border-slate-600 border-[1px] active:border-0 focus:border-0" type="text" placeholder="Submission Title" />
                 <label className="ml-4 mb-2 mt-8">Description</label>
                 <textarea className="rounded-[10px] px-4 py-2 border-slate-600 border-[1px] active:border-0 focus:border-0" rows={6} placeholder="Submission Description" />
+                <input className="rounded-full px-4 py-2 mt-8 border-slate-600 border-[1px] focus:border-blue-500 focus:border-2 active:border-blue-500 active:border-2" aria-describedby="file_input_help" id="file_input" type="file" />
+                <p className="mt-1 text-sm text-red-500" id="file_input_help">Supported files are .mp3, .mp4, .jpeg, and .png</p>
+                <label className="mb-2 mt-8">
+                  <div className="flex items-center">Private Submission <div className="ml-2">{ privateIcon }</div></div>
+                  <input className="bg-red-100" type="checkbox" id="permission" name="permission" value="permission" />
+                </label>
+                <label className="mb-2 mt-2">
+                  I have permission to submit this content. <br/>
+                  <input className="bg-red-100" type="checkbox" id="permission" name="permission" value="permission" />
+                </label>
               </div>
             </div>
             <div id="LinkForm" className={`w-1/2 ${styles.submissionForm}`}>
@@ -143,12 +155,14 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
                 <textarea className="rounded-[10px] px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" rows={6} placeholder="Submission Description" />
                 <label className="ml-4 mb-2 mt-8">Link</label>
                 <input className="rounded-full px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" type="text" placeholder="Submission Link" />
-                <label className="ml-4 mb-2 mt-8">
+                <label className="mb-2 mt-8">
+                  <div className="flex items-center">Private Submission <div className="ml-2">{ privateIcon }</div></div>
+                  <input className="bg-red-100" type="checkbox" id="permission" name="permission" value="permission" />
+                </label>
+                <label className="mb-2 mt-2">
                   I have permission to submit this content. <br/>
                   <input className="bg-red-100" type="checkbox" id="permission" name="permission" value="permission" />
                 </label>
-                
-                
               </div>
             </div>
           </div>
