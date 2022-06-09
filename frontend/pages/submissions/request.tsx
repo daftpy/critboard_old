@@ -4,6 +4,7 @@ import { ParsedUrlQuery } from "querystring";
 import { ReactElement, useEffect, useState } from "react";
 import BaseLayout from "../../components/BaseLayout";
 import styles from "../../styles/RequestForm.module.css";
+import axios from "axios";
 
 import { getSubmissionRequests, RequestData } from "../../lib/submissions";
 import SubmissionRequests from "../../components/SubmissionRequests";
@@ -93,6 +94,26 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
   const selectionNull = (e: React.MouseEvent) => {
     setType(null);
   }
+
+  const submitLinkSubmission = () => {
+    let requestObject: Object = {
+      "title": (document.getElementById('title') as HTMLInputElement).value,
+      "description": (document.getElementById('description') as HTMLInputElement).value,
+      "link": (document.getElementById('link') as HTMLInputElement).value,
+      "request_id": params.id
+    }
+    let postData: string = JSON.stringify(requestObject);
+    axios.post('http://localhost:8000/submissions/link/', postData, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => {
+        console.log(res.data);
+        if (res.status === 201)
+          router.push('/');
+      })
+  }
   
   return (
     <BaseLayout>
@@ -150,19 +171,25 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
               <div className="flex flex-col">
                 <h2 className="text-center font-bold text-2xl">Link Submission</h2>
                 <label className="ml-4 mb-2">Title</label>
-                <input className="rounded-full px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" type="text" placeholder="Submission Title" />
-                <label className="ml-4 mb-2 mt-8">Description</label>
-                <textarea className="rounded-[10px] px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" rows={6} placeholder="Submission Description" />
-                <label className="ml-4 mb-2 mt-8">Link</label>
-                <input className="rounded-full px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" type="text" placeholder="Submission Link" />
-                <label className="mb-2 mt-8">
+                <input id="title" className="rounded-full px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" type="text" placeholder="Submission Title" />
+                <label className="ml-4 mb-2 mt-12">Description</label>
+                <textarea id="description" className="rounded-[10px] px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" rows={6} placeholder="Submission Description" />
+                <label className="ml-4 mb-2 mt-12">Link</label>
+                <input id="link" className="rounded-full px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" type="text" placeholder="Submission Link" />
+                <label className="mb-2 mt-16">
                   <div className="flex items-center">Private Submission <div className="ml-2">{ privateIcon }</div></div>
-                  <input className="bg-red-100" type="checkbox" id="permission" name="permission" value="permission" />
+                  <input className="bg-red-100" type="checkbox" id="private" name="private" value="private" />
                 </label>
-                <label className="mb-2 mt-2">
+                <label className="mb-2 mt-6">
                   I have permission to submit this content. <br/>
                   <input className="bg-red-100" type="checkbox" id="permission" name="permission" value="permission" />
                 </label>
+                <button
+                  onClick={submitLinkSubmission}
+                  className="w-full bg-green-400 hover:bg-green-500 py-4 mt-6 text-slate-50 font-bold rounded-[14px]"
+                >
+                  Submit
+                </button>
               </div>
             </div>
           </div>
