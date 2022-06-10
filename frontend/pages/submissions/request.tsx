@@ -5,9 +5,11 @@ import { ReactElement, useEffect, useState } from "react";
 import BaseLayout from "../../components/BaseLayout";
 import styles from "../../styles/RequestForm.module.css";
 import axios from "axios";
+import type { LinkFormFields, LinkFormErrors } from "../../components/LinkForm";
 
 import { getSubmissionRequests, RequestData } from "../../lib/submissions";
 import SubmissionRequests from "../../components/SubmissionRequests";
+import LinkForm from "../../components/LinkForm";
 
 const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) => {
   /*
@@ -43,13 +45,19 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
   const headingStyle = "font-bold text-3xl text-center";
   const submissionTypeButton = "flex flex-col items-center font-light bg-green-500 hover:bg-green-400 py-8 px-10 rounded-[12px] text-xl text-slate-50 hover:drop-shadow"
 
-  // state for submission_type selection to control div visibility
+  // state for submission_type selection to control div visibility.
   const [submissionType, setType] = useState<React.SetStateAction<string | null>>(null);
-  const [count, setCount] = useState<number>(0); // Used to avoid animating on component mount
+  const [count, setCount] = useState<number>(0); // Used to avoid animating on component mount.
+  const [linkFormErrors, setLinkErrors] = useState<LinkFormErrors>({
+    title: null,
+    description: null,
+    link: null,
+    permission: null,
+  })
 
   useEffect(() => {
     const FileForm: HTMLElement = document.getElementById("FileForm")!;
-    const LinkForm: HTMLElement = document.getElementById("LinkForm")!;
+    const LinkForm: HTMLElement = document.getElementById("LinkFormWrapper")!;
     const TypeSelection: HTMLElement = document.getElementById("TypeSelection")!;
 
     if (submissionType == null && count != 0) {
@@ -87,6 +95,7 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
   }, [submissionType])
 
 
+  // Sets the state to control whether a Link or File form appears.
   const submissionSelection = (e: React.MouseEvent) => {
     setType(e.currentTarget.getAttribute("data-selection"));
   }
@@ -95,11 +104,13 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
     setType(null);
   }
 
-  const submitLinkSubmission = () => {
+  const submitLinkSubmission = (formData: LinkFormFields) => {
+    // reset errors
     let requestObject: Object = {
-      "title": (document.getElementById('title') as HTMLInputElement).value,
-      "description": (document.getElementById('description') as HTMLInputElement).value,
-      "link": (document.getElementById('link') as HTMLInputElement).value,
+      "title": formData["title"],
+      "description": formData["description"],
+      "link": formData["link"],
+      "permission": formData["permission"],
       "request_id": params.id
     }
     let postData: string = JSON.stringify(requestObject);
@@ -112,6 +123,20 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
         console.log(res.data);
         if (res.status === 201)
           router.push('/');
+      })
+      .catch(res => {
+        let formErrors: LinkFormErrors = {
+          title: null,
+          description: null,
+          link: null,
+          permission: null,   
+        }
+        Object.keys(res.response.data).forEach(key => {
+          console.log(res.response.data[key])
+          formErrors[key] = res.response.data[key];
+        })
+        setLinkErrors(formErrors);
+        console.log(formErrors);
       })
   }
   
@@ -163,34 +188,13 @@ const RequestForm: NextPage<{ requestData: RequestData[] }> = ({ requestData }) 
                 </label>
               </div>
             </div>
-            <div id="LinkForm" className={`w-1/2 ${styles.submissionForm}`}>
-              <div className="flex justify-between mb-6">
-                <button onClick={selectionNull}>{ backIcon } Back</button>
-                <div className="invisible">x</div>
-              </div>
-              <div className="flex flex-col">
-                <h2 className="text-center font-bold text-2xl">Link Submission</h2>
-                <label className="ml-4 mb-2">Title</label>
-                <input id="title" className="rounded-full px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" type="text" placeholder="Submission Title" />
-                <label className="ml-4 mb-2 mt-12">Description</label>
-                <textarea id="description" className="rounded-[10px] px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" rows={6} placeholder="Submission Description" />
-                <label className="ml-4 mb-2 mt-12">Link</label>
-                <input id="link" className="rounded-full px-4 py-2 border-slate-600 border-2 active:border-0 focus:border-0" type="text" placeholder="Submission Link" />
-                <label className="mb-2 mt-16">
-                  <div className="flex items-center">Private Submission <div className="ml-2">{ privateIcon }</div></div>
-                  <input className="bg-red-100" type="checkbox" id="private" name="private" value="private" />
-                </label>
-                <label className="mb-2 mt-6">
-                  I have permission to submit this content. <br/>
-                  <input className="bg-red-100" type="checkbox" id="permission" name="permission" value="permission" />
-                </label>
-                <button
-                  onClick={submitLinkSubmission}
-                  className="w-full bg-green-400 hover:bg-green-500 py-4 mt-6 text-slate-50 font-bold rounded-[14px]"
-                >
-                  Submit
-                </button>
-              </div>
+            <div id="LinkFormWrapper" className={`w-1/2 ${styles.submissionForm}`}>
+              <LinkForm
+                selectionNull={ selectionNull }
+                requestId={ params.id as string }
+                submitLinkSubmission={ submitLinkSubmission }
+                formErrors={ linkFormErrors }
+              />
             </div>
           </div>
         )

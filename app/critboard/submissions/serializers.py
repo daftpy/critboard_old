@@ -1,4 +1,6 @@
+from django.forms import ValidationError
 from rest_framework import serializers
+from django.core.validators import URLValidator
 from critboard.submissions.models import FileSubmissionData, LinkSubmissionData, SubmissionRequest
 
 
@@ -48,9 +50,10 @@ class FileSubmissionSerializer(serializers.Serializer):
 
 
 class LinkSubmissionSerializer(serializers.Serializer):
-    title = serializers.CharField()
-    description = serializers.CharField()
+    title = serializers.CharField(min_length=6, max_length=48)
+    description = serializers.CharField(min_length=18, max_length=255)
     link = serializers.CharField()
+    permission = serializers.BooleanField(write_only=True)
     created_at = serializers.DateTimeField(required=False)
     request_id = serializers.UUIDField(required=False, write_only=True)
 
@@ -65,3 +68,17 @@ class LinkSubmissionSerializer(serializers.Serializer):
         submission_request.submission_type = "link"
         submission_request.save()
         return link_submission
+
+    def validate_link(self, value):
+        validate = URLValidator()
+        try:
+            validate(value)
+        except ValidationError:
+            raise serializers.ValidationError("Please submit a valid link.")
+        return value
+
+    def validate_permission(self, value):
+        if value:
+            return value
+        else:
+            raise serializers.ValidationError("You must have permission to submit this content.")
